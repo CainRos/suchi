@@ -228,8 +228,7 @@ public class ConsultaUsuarioUrlFragment extends Fragment {
                 etiNombre.setText(miUsuario.getNombre());//SE MODIFICA
                 etiProfesion.setText(miUsuario.getProfesion());//SE MODIFICA
 
-                String urlImagen="https://sushiuan.000webhostapp.com/wsJSONUpdateMovil.php?nombre="+etiNombre.getText().toString()+
-                        "&profesion="+etiProfesion.getText().toString();
+                String urlImagen="";
                 //Toast.makeText(getContext(), "url "+urlImagen, Toast.LENGTH_LONG).show();
                 cargarWebServiceImagen(urlImagen);
             }
@@ -277,9 +276,10 @@ public class ConsultaUsuarioUrlFragment extends Fragment {
         pDialog.setMessage("Cargando...");
         pDialog.show();
 
-        String ip=getString(R.string.ip);
 
-        String url=ip+"/ejemploBDRemota/wsJSONUpdateMovil.php?";
+        String url="https://sushiuan.000webhostapp.com/wsJSONUpdateMovil.php?documento="+txtDocumento.getText().toString()+
+                "&nombre="+etiNombre.getText().toString()+
+                "&profesion="+etiProfesion.getText().toString();
 
         stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -340,9 +340,7 @@ public class ConsultaUsuarioUrlFragment extends Fragment {
         pDialog.setMessage("Cargando...");
         pDialog.show();
 
-        String ip=getString(R.string.ip);
-
-        String url=ip+"/ejemploBDRemota/wsJSONDeleteMovil.php?documento="+txtDocumento.getText().toString();
+        String url="https://sushiuan.000webhostapp.com/wsJSONDeleteMovil.php?documento="+txtDocumento.getText().toString();
 
         stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
