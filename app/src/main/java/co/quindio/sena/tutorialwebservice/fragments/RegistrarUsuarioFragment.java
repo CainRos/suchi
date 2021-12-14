@@ -378,10 +378,11 @@ public class RegistrarUsuarioFragment extends Fragment {
         progreso.setMessage("Cargando...");
         progreso.show();
 
-        String url="https://sushiuan.000webhostapp.com/wsJSONRegistroMovil.php?documento="+campoDocumento.getText().toString()+"&nombre="+campoNombre.getText().toString()+
+        String url="https://sushiuan.000webhostapp.com/wsJSONRegistroMovil.php?documento="+campoDocumento.getText().toString()+
+                "&nombre="+campoNombre.getText().toString()+
                 "&profesion="+campoProfesion.getText().toString();
 
-
+        url= url.replace(" ", "%20");
 
         stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
 

@@ -202,9 +202,9 @@ public class ConsultaUsuarioUrlFragment extends Fragment {
         pDialog.setMessage("Cargando...");
         pDialog.show();
 
-        final String ip=getString(R.string.ip);
+        final String ip="";
 
-        String url=ip+"/ejemploBDRemota/wsJSONConsultarUsuarioUrl.php?documento="+txtDocumento.getText().toString();
+        String url=ip+"https://sushiuan.000webhostapp.com/wsJSONConsultarUsuarioUrl.php?documento="+txtDocumento.getText().toString();
 
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -228,7 +228,8 @@ public class ConsultaUsuarioUrlFragment extends Fragment {
                 etiNombre.setText(miUsuario.getNombre());//SE MODIFICA
                 etiProfesion.setText(miUsuario.getProfesion());//SE MODIFICA
 
-                String urlImagen=ip+"/ejemploBDRemota/"+miUsuario.getRutaImagen();
+                String urlImagen="https://sushiuan.000webhostapp.com/wsJSONUpdateMovil.php?nombre="+etiNombre.getText().toString()+
+                        "&profesion="+etiProfesion.getText().toString();
                 //Toast.makeText(getContext(), "url "+urlImagen, Toast.LENGTH_LONG).show();
                 cargarWebServiceImagen(urlImagen);
             }
