@@ -117,9 +117,7 @@ public class ConsutarListausuarioImagenFragment extends Fragment
         dialog.setMessage("Consultando Imagenes");
         dialog.show();
 
-        String ip=getString(R.string.ip);
-
-        String url=ip+"/ejemploBDRemota/wsJSONConsultarListaImagenes.php";
+        String url="https://sushiuan.000webhostapp.com/wsJSONConsultarListaImagenes.php";
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
        // request.add(jsonObjectRequest);
         VolleySingleton.getIntanciaVolley(getContext()).addToRequestQueue(jsonObjectRequest);

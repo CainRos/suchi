@@ -121,7 +121,7 @@ public class ConsultarUsuarioFragment extends Fragment implements Response.Liste
         progreso.setMessage("Consultando...");
         progreso.show();
 
-        String url="https://sushiuan.000webhostapp.com/wsJSONConsultarUsuario.php?documento="+campoDocumento.getText().toString();
+        String url="https://sushiuan.000webhostapp.com/wsJSONConsultarUsuarioImagen.php?documento="+campoDocumento.getText().toString();
 
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
        // request.add(jsonObjectRequest);
