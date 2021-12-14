@@ -377,7 +377,7 @@ public class RegistrarUsuarioFragment extends Fragment {
         progreso=new ProgressDialog(getContext());
         progreso.setMessage("Cargando...");
         progreso.show();
-
+        String IMG=convertirImgString(bitmap);
         String url="https://sushiuan.000webhostapp.com/wsJSONRegistroMovil.php?documento="+campoDocumento.getText().toString()+
                 "&nombre="+campoNombre.getText().toString()+
                 "&profesion="+campoProfesion.getText().toString();
